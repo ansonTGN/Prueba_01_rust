@@ -43,8 +43,7 @@ La arquitectura está diseñada siguiendo los principios de los sistemas distrib
     *   `llm_gateway`: Recibe solicitudes de procesamiento de lenguaje natural y las delega al proveedor de LLM configurado, gestionando la autenticación y adaptación de la API.
 4.  **Cliente Interactivo**: La interfaz de usuario final que se conecta a NATS para enviar comandos y recibir actualizaciones de manera asíncrona.
 
-![Diagrama de Arquitectura (Conceptual)](https://i.imgur.com/example.png)
-*(Nota: Reemplaza esta imagen con un diagrama de tu arquitectura detallado).*
+![Diagrama de Arquitectura](./img/arquitectura_sistema.png)
 
 ## 💡 Protocolo de Comunicación (MCP)
 
