@@ -1,7 +1,3 @@
-Claro, aquí tienes una propuesta de `README.md` profesional para tu repositorio de GitHub, generado a partir de la estructura y el código de tu proyecto.
-
----
-
 # Procesador de Archivos Multi-Agente
 
 [![Estado de la Construcción](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/usuario/repositorio)
