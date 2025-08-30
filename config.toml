@@ -1,0 +1,47 @@
+# config.toml
+# Configuración para el lanzador de agentes.
+# Define qué agentes se deben iniciar y cómo deben comportarse.
+
+# Perfil de compilación a utilizar ('debug' o 'release').
+# 'release' es recomendado para producción para un rendimiento óptimo.
+build_profile = "debug"
+
+# Lista de todos los agentes gestionados por el lanzador.
+[[agents]]
+# Nombre legible para los logs.
+name = "File Explorer"
+# Nombre del binario compilado por Cargo. Debe coincidir con el `[[bin]]` en Cargo.toml.
+bin = "file_explorer"
+# Si es 'true', el lanzador iniciará este agente.
+enabled = true
+# Política de reinicio en caso de que el agente se detenga inesperadamente.
+# "never": No reiniciar.
+# "on_failure": Reiniciar solo si termina con un código de error.
+# "always": Reiniciar siempre que se detenga.
+restart = "on_failure"
+
+[[agents]]
+name = "Metadata Extractor"
+bin = "metadata_extractor"
+enabled = true
+restart = "on_failure"
+
+[[agents]]
+name = "Summarizer"
+bin = "summarizer"
+enabled = true
+restart = "on_failure"
+
+[[agents]]
+name = "LLM Gateway"
+bin = "llm_gateway"
+enabled = true
+restart = "on_failure"
+
+# El cliente interactivo generalmente no se gestiona como un servicio de fondo,
+# pero podría habilitarse si se modifica para que sea un proceso de larga duración.
+[[agents]]
+name = "Interactive Client"
+bin = "interactive_client"
+enabled = false # Deshabilitado por defecto.
+restart = "never"

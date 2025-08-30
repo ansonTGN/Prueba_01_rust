@@ -1,0 +1,62 @@
+# Cargo.toml
+
+[package]
+name = "multi_agent_file_processor"
+version = "5.0.0" # Versión con LLM Gateway
+edition = "2021"
+
+[dependencies]
+# --- Core Dependencies ---
+async-nats = "0.34"
+futures-util = "0.3"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+async-trait = "0.1"
+reqwest = { version = "0.11", features = ["json"] }
+dialoguer = "0.11.0"
+console = "0.15.8"
+dotenvy = "0.15.7"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+toml = "0.8"
+eframe = { version = "0.27", default-features = true }
+egui = "0.27"
+rfd = "0.14"
+dirs = "5"
+
+# --- Definición de la Biblioteca y los Binarios ---
+[lib]
+name = "multi_agent_file_processor"
+path = "src/lib.rs"
+
+[[bin]]
+name = "file_explorer"
+path = "src/bin/1_file_explorer.rs"
+
+[[bin]]
+name = "metadata_extractor"
+path = "src/bin/2_metadata_extractor.rs"
+
+[[bin]]
+name = "interactive_client"
+path = "src/bin/4_interactive_client.rs"
+
+[[bin]]
+name = "agent_launcher"
+path = "src/bin/6_agent_launcher.rs"
+
+# --- Agentes con dependencias específicas ---
+
+[[bin]]
+name = "summarizer"
+path = "src/bin/3_summarizer.rs"
+
+[[bin]]
+name = "llm_gateway"
+path = "src/bin/5_llm_gateway.rs"
+# agentai es ahora una dependencia exclusiva de este binario
+[target.'cfg(not(doc))'.dependencies]
+agentai = "0.1.5"

@@ -1,0 +1,3 @@
+# En la misma terminal donde lanzas el cliente:
+export NATS_URL=nats://172.17.0.3:4222
+cargo run --bin interactive_client

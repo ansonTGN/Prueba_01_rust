@@ -1,0 +1,6 @@
+# Asegúrate de tener ollama corriendo y el modelo descargado:
+# ollama run llama3.1:8b
+export OLLAMA_BASE_URL="http://localhost:11434"
+export SUMMARIZER_MODEL="ollama:llama3.1:8b"
+docker run --rm -p 4222:4222 -p 8222:8222 --name nats-server nats:latest
+cargo run --bin agent_launcher
