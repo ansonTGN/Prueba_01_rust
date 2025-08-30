@@ -123,7 +123,8 @@ cargo run --bin agent_launcher
 En una **segunda terminal**, lanza la interfaz gráfica.
 
 ```bash
-cargo run --bin interactive_client```
+cargo run --bin interactive_client
+```
 
 ¡Listo! La GUI se conectará al ecosistema de agentes a través de NATS, permitiéndote explorar archivos y solicitar resúmenes.
 
